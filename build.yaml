@@ -27,8 +27,9 @@ include:
 #    shield: sofle_dongle_right
   - board: nice_nano
     shield: sofle_left
-    snippet: studio-rpc-usb-uart
   - board: nice_nano
     shield: sofle_right
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n 
   - board: nice_nano
     shield: settings_reset
