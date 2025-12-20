@@ -5,20 +5,14 @@
  */
 
 #include "sofle.dtsi"
-
-
-
-
 #include "split_inputs.dtsi"
-#include "sweeple.dtsi"
-#include <input/processors.dtsi>
-       
-&trackpoint_listener {
-    status = "okay";
-    input-processors = <&zip_xy_swap_mapper>;
-};
 
 
+//#include <input/processors/report_rate_limit.dtsi>
+//#include <input/processors/xyz.dtsi>
+
+&trackpoint_split { device = <&mouse_ps2>; };
+//&trackpoint_split { device = <&mouse_ps2>; input-processors = <&zip_report_rate_limit 4>, <&zip_xyz>; };
 
 
 
