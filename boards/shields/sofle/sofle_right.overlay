@@ -6,6 +6,22 @@
 
 #include "sofle.dtsi"
 
+
+
+
+#include "split_inputs.dtsi"
+#include "sweeple.dtsi"
+#include <input/processors.dtsi>
+       
+&trackpoint_listener {
+    status = "okay";
+    input-processors = <&zip_xy_swap_mapper>;
+};
+
+
+
+
+
 &default_transform {
     col-offset = <6>;
 };
