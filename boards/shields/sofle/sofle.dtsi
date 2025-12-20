@@ -5,6 +5,7 @@
  */
 
 #include <dt-bindings/zmk/matrix_transform.h>
+#include <input/processors.dtsi>
 #include <layouts/josefadamcik/sofle.dtsi>
 
 &josefadamcik_sofle_layout {
@@ -13,7 +14,7 @@
 
 / {
     chosen {
-        zephyr,display = &oled;
+        //zephyr,display = &oled;
         zmk,kscan = &kscan0;
     };
 
@@ -72,25 +73,6 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
     };
 };
 
-//&pro_micro_i2c {
-//    status = "okay";
-//
-//    oled: ssd1306@3c {
-//        compatible = "solomon,ssd1306fb";
-//        reg = <0x3c>;
-//        width = <128>;
-//        height = <32>;
-//        segment-offset = <0>;
-//        page-offset = <0>;
-//        display-offset = <0>;
-//        multiplex-ratio = <31>;
-//        segment-remap;
-//        com-invdir;
-//        com-sequential;
-//        inversion-on;
-//        prechargep = <0x22>;
-//    };
-//};
 
 
 
@@ -398,22 +380,6 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
 
 &pro_micro_i2c {
     status = "okay";
-
-    oled: ssd1306@3c {
-        compatible = "solomon,ssd1306fb";
-        reg = <0x3c>;
-        width = <128>;
-        height = <32>;
-        segment-offset = <0>;
-        page-offset = <0>;
-        display-offset = <0>;
-        multiplex-ratio = <31>;
-        segment-remap;
-        com-invdir;
-        com-sequential;
-        inversion-on;
-        prechargep = <0x22>;
-    };
 };
 
 &mouse_ps2_input_listener {
